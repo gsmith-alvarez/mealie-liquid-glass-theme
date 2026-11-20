@@ -501,56 +501,84 @@ header.v-toolbar,
   border-radius: 16px !important;
 }
 
-/* Selection controls: modern glass switches and checkboxes. */
-.v-switch .v-selection-control,
+/* Glass switch: a translucent track and thumb, without a second outer pill. */
 .v-checkbox .v-selection-control {
   border-radius: var(--glass-radius-pill) !important;
 }
-
 .v-switch .v-selection-control {
-  display: inline-flex !important;
-  width: auto !important;
   min-height: 48px !important;
-  padding: 6px 12px 6px 8px !important;
-  background: linear-gradient(145deg, rgba(39, 39, 42, 0.72), rgba(24, 24, 27, 0.54)) !important;
-  border: 1px solid rgba(248, 113, 113, 0.22) !important;
-  box-shadow: 0 12px 34px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.12) !important;
-  backdrop-filter: var(--glass-blur) !important;
-  -webkit-backdrop-filter: var(--glass-blur) !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
-
+.v-switch:not(.v-switch--inset) .v-selection-control__wrapper {
+  width: max(40px, calc(46px * var(--v-switch-scale, 1)));
+  flex: 0 0 auto;
+}
 .v-switch .v-label {
   color: var(--fg-strong) !important;
-  opacity: 1 !important;
-  font-weight: 650 !important;
-  letter-spacing: 0.01em !important;
+  font-weight: 500 !important;
   padding-inline-start: 10px !important;
-  text-shadow: 0 1px 10px rgba(0,0,0,0.42);
+  text-shadow: none !important;
 }
-
 .v-switch .v-switch__track {
-  width: 46px !important;
-  height: 24px !important;
-  border-radius: var(--glass-radius-pill) !important;
+  width: calc(46px * var(--v-switch-scale, 1)) !important;
+  min-width: calc(46px * var(--v-switch-scale, 1)) !important;
+  height: max(calc(26px * var(--v-switch-scale, 1)), var(--v-switch-track-height, 0px)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.24) !important;
+  border-radius: 999px !important;
   opacity: 1 !important;
-  background: linear-gradient(135deg, rgba(63,63,70,0.92), rgba(39,39,42,0.92)) !important;
-  border: 1px solid rgba(255,255,255,0.16) !important;
-  box-shadow: inset 0 2px 8px rgba(0,0,0,0.42) !important;
+  background: linear-gradient(145deg, rgba(140, 148, 163, 0.35), rgba(53, 57, 68, 0.45)) !important;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.18), inset 0 -2px 5px rgba(0, 0, 0, 0.22) !important;
 }
-
-.v-switch .v-selection-control--dirty .v-switch__track,
-.v-switch .v-switch__track.bg-primary {
-  background: linear-gradient(135deg, #991b1b 0%, #dc2626 58%, #fb7185 100%) !important;
-  border-color: rgba(254, 202, 202, 0.40) !important;
-  box-shadow: 0 0 22px rgba(220,38,38,0.28), inset 0 1px 0 rgba(255,255,255,0.22) !important;
+.v-switch--inset .v-switch__track {
+  width: calc(52px * var(--v-switch-scale, 1)) !important;
+  min-width: calc(52px * var(--v-switch-scale, 1)) !important;
 }
-
+.v-switch .v-selection-control--dirty .v-switch__track {
+  border-color: rgba(255, 177, 184, 0.60) !important;
+  background: linear-gradient(145deg, rgba(248, 113, 113, 0.85), rgba(185, 28, 28, 0.78)) !important;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.28), inset 0 -2px 5px rgba(100, 0, 0, 0.22), 0 0 12px rgba(220, 38, 38, 0.18) !important;
+}
 .v-switch .v-switch__thumb {
-  width: 20px !important;
-  height: 20px !important;
-  background: radial-gradient(circle at 35% 25%, #fff 0%, #fecaca 38%, #ef4444 100%) !important;
-  border: 1px solid rgba(255,255,255,0.55) !important;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.38), 0 0 14px rgba(248,113,113,0.28) !important;
+  width: var(--v-switch-thumb-width, 20px) !important;
+  height: var(--v-switch-thumb-height, 20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.70) !important;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(206, 215, 225, 0.84)) !important;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.9), 0 2px 6px rgba(0, 0, 0, 0.35) !important;
+}
+.v-switch .v-selection-control:has(input:focus-visible) .v-switch__track {
+  outline: 2px solid #fda4af;
+  outline-offset: 3px;
+}
+@media (forced-colors: active) {
+  .v-switch .v-switch__track {
+    border-color: ButtonText !important;
+    background: Canvas !important;
+  }
+  .v-switch .v-switch__thumb {
+    border-color: ButtonText !important;
+    background: ButtonText !important;
+  }
+  .v-switch .v-selection-control--dirty:not(.v-selection-control--disabled) .v-switch__track {
+    border-color: Highlight !important;
+    background: Highlight !important;
+  }
+  .v-switch .v-selection-control--dirty:not(.v-selection-control--disabled) .v-switch__thumb {
+    border-color: HighlightText !important;
+    background: HighlightText !important;
+  }
+  .v-switch .v-selection-control--disabled .v-switch__track {
+    border-color: GrayText !important;
+    background: Canvas !important;
+  }
+  .v-switch .v-selection-control--disabled .v-switch__thumb {
+    border-color: GrayText !important;
+    background: GrayText !important;
+  }
 }
 
 .v-checkbox .v-selection-control__input {
@@ -957,19 +985,6 @@ hr {
 }
 .v-menu > .v-overlay__content .v-btn-toggle .v-btn--active {
   background: rgba(248, 113, 113, 0.18) !important;
-}
-.v-menu > .v-overlay__content .v-switch .v-selection-control {
-  padding: 0 !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-.v-menu > .v-overlay__content .v-switch .v-label {
-  font-weight: 500 !important;
-  text-shadow: none !important;
 }
 .v-menu > .v-overlay__content .v-field--variant-underlined {
   border: 1px solid rgba(255, 255, 255, 0.14) !important;

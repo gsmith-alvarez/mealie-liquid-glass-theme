@@ -5,7 +5,7 @@ anthracite/black surfaces, red accents, translucent glass cards, softened border
 and cache-busted CSS injection.
 
 This fork of [thorethy1/mealie-liquid-glass-theme](https://github.com/thorethy1/mealie-liquid-glass-theme)
-includes refinements for navigation, search, menus, checkboxes, cookbooks,
+includes refinements for navigation, search, menus, switches, checkboxes, cookbooks,
 organizers, the meal planner, timeline, and recipe pages. It is the source of
 the theme used by the server configuration; the upstream installation instructions below still apply.
 
