@@ -21,8 +21,9 @@ view the complete image in Mealie's lightbox.
 Recipe categories, tags, and nutrition use flat sections on desktop and mobile.
 Switches use a simple outlined track; checkboxes use an orange flip-disc
 treatment inspired by Uiverse.io's chase2k25.
-Primary actions use a restrained orange glass highlight; navigation, filters,
-icon buttons, and destructive actions keep their distinct treatments.
+Create, filter, and planner controls share translucent amber glass. Cook mode's
+entry and exit use matching red glass; destructive actions retain their warning
+colors.
 
 ## Screenshots
 
