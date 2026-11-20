@@ -911,6 +911,10 @@ div[style*="height"]:has(> .v-card.mx-auto > .v-list-item) {
     grid-template-columns: 118px minmax(0, 1fr);
     align-items: center;
   }
+  /* Keep Vuetify's loader from occupying the image or content grid cell. */
+  #timeline-container .v-timeline-item__body .v-card.flat:has(> .v-img.rounded-sm) > .v-card__loader {
+    position: absolute;
+  }
   #timeline-container .v-timeline-item__body .v-card.flat > .v-img.rounded-sm {
     width: 118px !important;
     height: 118px !important;
