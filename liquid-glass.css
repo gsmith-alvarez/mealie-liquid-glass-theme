@@ -189,7 +189,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .v-card,
 .v-sheet { position: relative; }
-.v-card > *, .v-sheet > * { position: relative; z-index: 1; }
+/* Do not raise sheet children above fixed controls such as the cook mode exit. */
+.v-card > * { position: relative; z-index: 1; }
 
 /* Sidebar / top bars */
 .v-navigation-drawer,

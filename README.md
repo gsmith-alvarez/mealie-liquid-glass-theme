@@ -190,6 +190,24 @@ THEME_DARK_ERROR="#FB7185"
   update HTML files in the detected frontend directory. For a read-only frontend,
   inject the stylesheet during the image or package build instead.
 
+## Browser regression test
+
+The cook-mode test creates and deletes two recipes. Run it only against a
+disposable, English-language Mealie instance with this theme already injected.
+It substitutes the checkout's CSS in the test browser, then checks mouse and
+touch exit for both linked and unlinked ingredients.
+
+```sh
+npm install --no-save --no-package-lock puppeteer-core@25.18.1
+MEALIE_TEST_URL=http://127.0.0.1:9000 \
+MEALIE_TEST_USERNAME=changeme@example.com \
+MEALIE_TEST_PASSWORD=MyPassword \
+CHROMIUM_PATH=/path/to/chromium \
+node --test tests/cook-mode.mjs
+```
+
+The test skips when `MEALIE_TEST_URL` is unset.
+
 ## Troubleshooting
 
 - **Theme not applied**: check `docker logs mealie` for lines prefixed with
