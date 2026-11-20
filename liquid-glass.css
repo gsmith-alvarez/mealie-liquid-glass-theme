@@ -1891,9 +1891,9 @@ section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .
 }
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   :root {
-    --primary-action-bg: linear-gradient(-75deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.05)), rgba(105, 57, 19, 0.30);
+    --primary-action-bg: linear-gradient(-75deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.05)), rgba(105, 57, 19, 0.48);
     --primary-action-blur: blur(3px) saturate(140%);
-    --cook-action-bg: linear-gradient(-75deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.05)), rgba(105, 35, 42, 0.30);
+    --cook-action-bg: linear-gradient(-75deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.05)), rgba(105, 35, 42, 0.48);
   }
 }
 :is(
