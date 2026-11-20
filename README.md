@@ -24,6 +24,8 @@ treatment inspired by Uiverse.io's chase2k25.
 Create, filter, and planner controls share translucent amber glass. Cook mode's
 entry and exit use matching red glass; destructive actions retain their warning
 colors.
+The planner date menu keeps its calendar and week settings on one surface, with
+a high-contrast selected day.
 
 ## Screenshots
 

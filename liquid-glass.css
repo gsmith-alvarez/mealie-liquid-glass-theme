@@ -1015,6 +1015,47 @@ hr {
   padding: 0 12px 12px !important;
 }
 
+/* The planner date menu is one surface, not a card around another card. */
+.v-menu > .v-overlay__content > .v-card:has(> .v-date-picker + .v-card-text .v-number-input) {
+  width: 360px;
+  padding-top: 8px;
+}
+.v-menu > .v-overlay__content > .v-card:has(> .v-date-picker + .v-card-text .v-number-input) > .v-date-picker {
+  max-width: 100%;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.v-menu > .v-overlay__content > .v-card:has(> .v-date-picker + .v-card-text .v-number-input) > .v-card-text {
+  padding: 8px 16px !important;
+}
+.v-menu > .v-overlay__content > .v-card:has(> .v-date-picker + .v-card-text .v-number-input) > .v-date-picker + .v-card-text {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* Vuetify's primary foreground is dark; keep selected dates legible on glass. */
+.v-menu .v-date-picker-month__day--selected .v-date-picker-month__day-btn {
+  color: #fff5e8 !important;
+  background: #8c470f !important;
+  border: 1px solid #e9a355 !important;
+}
+.v-menu .v-date-picker-month__day--selected .v-date-picker-month__day-btn .v-btn__content {
+  color: inherit !important;
+}
+.v-menu .v-date-picker-month__range-bg {
+  background: rgba(255, 173, 77, 0.14) !important;
+}
+.v-menu .v-date-picker-month__day--selected:not(.v-date-picker-month__day--range-start):not(.v-date-picker-month__day--range-end) .v-date-picker-month__day-btn {
+  background: rgba(255, 173, 77, 0.14) !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+.v-menu .v-date-picker-month__day-btn:focus-visible {
+  outline: 2px solid #ffad4d !important;
+  outline-offset: 2px;
+}
+
 /* The planner's range and mode controls should not look like pills. */
 .range-nav .v-btn:not(.v-btn--icon) {
   border-radius: 8px !important;
