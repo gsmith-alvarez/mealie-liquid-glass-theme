@@ -24,8 +24,9 @@ treatment inspired by Uiverse.io's chase2k25.
 Recipe ingredients show an X until checked, then flip to a check and strike
 through the ingredient text.
 Create, filter, and planner controls use capsule-shaped translucent amber glass
-with a moving reflection, directional rim, and pressed tilt. Cook mode's entry
-and exit use matching red glass; destructive actions retain their warning colors.
+with soft reflections, a localized glow, a directional rim, and a pressed tilt.
+Cook mode's entry and exit use matching red glass; destructive actions retain
+their warning colors.
 The planner date menu keeps its calendar and week settings on one surface, with
 a high-contrast selected day.
 
