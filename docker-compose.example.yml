@@ -4,14 +4,14 @@ services:
     container_name: mealie
     restart: unless-stopped
     environment:
-      - TZ=Europe/Berlin
+      TZ: Europe/Berlin
       # Optional: align Vuetify's runtime colors with the theme
-      - THEME_LIGHT_PRIMARY=E87500
-      - THEME_LIGHT_ACCENT=FFAD4D
-      - THEME_LIGHT_SECONDARY=1F2937
-      - THEME_DARK_PRIMARY=E87500
-      - THEME_DARK_ACCENT=FFAD4D
-      - THEME_DARK_SECONDARY=030712
+      THEME_LIGHT_PRIMARY: "#E87500"
+      THEME_LIGHT_ACCENT: "#FFAD4D"
+      THEME_LIGHT_SECONDARY: "#1F2937"
+      THEME_DARK_PRIMARY: "#E87500"
+      THEME_DARK_ACCENT: "#FFAD4D"
+      THEME_DARK_SECONDARY: "#030712"
     entrypoint: ["/theme/entrypoint-liquid-glass.sh"]
     volumes:
       - ./data:/app/data
