@@ -794,3 +794,664 @@ hr {
 }
 
 /* tweak */
+
+/* Keep the sidebar's Create button clear of the navigation list. */
+.v-navigation-drawer__content > .v-btn.mt-3 {
+  margin-bottom: 16px !important;
+}
+
+/* Flat sidebar navigation; reserve the stronger treatment for Create. */
+.v-navigation-drawer .v-list {
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.v-navigation-drawer__content > .v-list + .v-divider {
+  margin-top: 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.14) !important;
+  opacity: 1;
+}
+.v-navigation-drawer .v-list .v-list-item {
+  border-radius: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.v-navigation-drawer .v-list .v-list-item:hover,
+.v-navigation-drawer .v-list .v-list-item:focus-visible {
+  background: rgba(248, 113, 113, 0.07) !important;
+}
+.v-navigation-drawer .v-list .v-list-item--active {
+  background: rgba(248, 113, 113, 0.07) !important;
+  box-shadow: inset 3px 0 0 #f87171 !important;
+}
+.v-navigation-drawer .v-list .v-list-item:focus-visible {
+  outline: 2px solid #f87171 !important;
+  outline-offset: -2px;
+}
+.v-navigation-drawer .v-list-group__items .v-list-item {
+  margin-left: 24px !important;
+}
+
+/* Use Vuetify's checkbox icon without an extra decorative box. */
+.v-checkbox .v-selection-control {
+  align-items: center !important;
+}
+.v-checkbox .v-selection-control__wrapper {
+  margin-top: 0 !important;
+}
+.v-checkbox .v-label {
+  user-select: none;
+}
+.v-checkbox:not(.v-input--disabled) .v-label {
+  cursor: pointer;
+}
+.v-checkbox .v-selection-control__input,
+.v-checkbox .v-selection-control:hover .v-selection-control__input,
+.v-checkbox:has(input:checked) .v-selection-control__input,
+.v-checkbox .v-selection-control--dirty .v-selection-control__input {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none;
+}
+.v-checkbox:has(input:checked) .v-selection-control__input::after {
+  content: none;
+}
+.v-checkbox:has(input:checked) .v-selection-control__input svg {
+  opacity: 1 !important;
+}
+.v-checkbox .v-icon,
+.v-checkbox svg {
+  color: rgba(226, 232, 240, 0.75) !important;
+  fill: currentColor !important;
+}
+.v-checkbox .v-selection-control--dirty .v-icon,
+.v-checkbox .v-selection-control--dirty svg {
+  color: #f87171 !important;
+}
+.v-checkbox .v-selection-control__input:has(input:focus-visible) {
+  outline: 2px solid #f87171 !important;
+  outline-offset: 2px;
+}
+
+/* Menu lists use one surface and compact rows, not a card per item. */
+.v-menu > .v-overlay__content {
+  max-width: calc(100vw - 16px) !important;
+}
+.v-menu > .v-overlay__content:has(> .v-card),
+.v-menu > .v-overlay__content:has(> .v-list) {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.v-menu > .v-overlay__content > .v-card,
+.v-menu > .v-overlay__content > .v-list {
+  border-radius: 8px !important;
+}
+.v-menu > .v-overlay__content > .v-card {
+  max-width: 100% !important;
+}
+.v-menu > .v-overlay__content > .v-card > .v-list {
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.v-menu > .v-overlay__content .v-card--variant-text:has(.v-virtual-scroll) {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.v-menu > .v-overlay__content .v-card--variant-text:has(.v-virtual-scroll)::before {
+  display: none;
+}
+.v-menu > .v-overlay__content .v-list-item {
+  min-height: 48px !important;
+  margin: 0 !important;
+  padding: 8px 16px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.v-menu > .v-overlay__content .v-list-item:hover,
+.v-menu > .v-overlay__content .v-list-item:focus-visible {
+  background: rgba(248, 113, 113, 0.08) !important;
+}
+.v-menu > .v-overlay__content .v-list-item--active {
+  background: rgba(248, 113, 113, 0.08) !important;
+  box-shadow: inset 3px 0 0 #f87171 !important;
+}
+.v-menu > .v-overlay__content .v-list-item:focus-visible {
+  outline: 2px solid #f87171 !important;
+  outline-offset: -2px;
+}
+.v-menu > .v-overlay__content .v-btn:not(.v-btn--icon),
+.search-row .v-btn:not(.v-btn--icon) {
+  border-radius: 8px !important;
+}
+.v-menu > .v-overlay__content .v-btn-toggle {
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+.v-menu > .v-overlay__content .v-btn-toggle .v-btn {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+.v-menu > .v-overlay__content .v-btn-toggle .v-btn__overlay {
+  border-radius: 0;
+}
+.v-menu > .v-overlay__content .v-btn-toggle .v-btn--active {
+  background: rgba(248, 113, 113, 0.18) !important;
+}
+.v-menu > .v-overlay__content .v-switch .v-selection-control {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.v-menu > .v-overlay__content .v-switch .v-label {
+  font-weight: 500 !important;
+  text-shadow: none !important;
+}
+.v-menu > .v-overlay__content .v-field--variant-underlined {
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 6px !important;
+  background: rgba(0, 0, 0, 0.18) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  --v-field-padding-start: 12px;
+  --v-field-padding-end: 12px;
+}
+.v-menu > .v-overlay__content .v-field--variant-underlined .v-field__input {
+  min-height: 56px !important;
+  padding-top: 22px !important;
+  padding-bottom: 6px !important;
+  padding-inline: 12px !important;
+}
+.v-menu > .v-overlay__content .v-field--variant-underlined .v-field-label--floating {
+  top: 4px !important;
+  inset-inline-start: 12px !important;
+  transform: none !important;
+  font-size: 12px !important;
+}
+.v-menu > .v-overlay__content .v-field--variant-underlined .v-field__outline::before,
+.v-menu > .v-overlay__content .v-field--variant-underlined .v-field__outline::after {
+  display: none;
+}
+.v-menu > .v-overlay__content .v-field--variant-underlined.v-field--focused {
+  border-color: rgba(248, 113, 113, 0.65) !important;
+}
+
+/* Keep the compact header search inside the bar and away from Logout. */
+.v-app-bar .v-responsive:has(.v-text-field) {
+  align-self: center;
+  margin-inline: 8px 12px;
+}
+.v-app-bar .v-text-field {
+  --v-input-control-height: 36px;
+  margin-top: 0 !important;
+}
+.v-app-bar .v-text-field .v-field__input {
+  min-height: 36px !important;
+  padding-block: 0 !important;
+}
+.v-app-bar .v-text-field .v-input__details {
+  display: none;
+}
+
+/* The planner's range and mode controls should not look like pills. */
+.range-nav .v-btn:not(.v-btn--icon) {
+  border-radius: 8px !important;
+}
+.range-nav + .v-btn-toggle {
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+.range-nav + .v-btn-toggle .v-btn {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+.range-nav + .v-btn-toggle .v-btn__overlay {
+  border-radius: 0;
+}
+.range-nav + .v-btn-toggle .v-btn--active {
+  background: rgba(248, 113, 113, 0.18) !important;
+}
+.col-borders > .v-card.rounded-sm {
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+.col-borders.week-section {
+  background: transparent !important;
+}
+
+/* Vuetify card overlays must not take up space in the card layout. */
+.v-card > .v-card__overlay,
+.v-card > .v-card__underlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* RecipeCardMobile is also used in desktop timelines and meal plans. */
+div[style*="height"]:has(> .v-card.mx-auto > .v-list-item) {
+  height: auto !important;
+}
+.v-card.mx-auto:has(> .v-list-item) {
+  height: auto !important;
+  min-height: 150px;
+}
+.v-card.mx-auto > .v-list-item {
+  display: flex !important;
+  align-items: center !important;
+  height: auto !important;
+  min-height: 150px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.v-card.mx-auto > .v-list-item > .v-list-item__content {
+  flex: 1 1 0;
+  min-width: 0 !important;
+}
+
+/* Put the recipe information over the full-width hero image. */
+.d-flex.justify-end.flex-wrap.align-stretch:has(> .v-img):has(> .v-card.v-card--flat.justify-center.align-center) {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(180px, min(34vw, 400px)) auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.d-flex.justify-end.flex-wrap.align-stretch:has(> .v-card.v-card--flat.justify-center.align-center) > .v-img {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  z-index: 0;
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  align-self: stretch !important;
+  border-radius: 0 !important;
+}
+.d-flex.justify-end.flex-wrap.align-stretch:has(> .v-img) > .v-card.v-card--flat.justify-center.align-center {
+  grid-column: 1;
+  grid-row: 2;
+  z-index: 1;
+  width: 100% !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: linear-gradient(180deg, rgba(9, 9, 11, 0.72), rgba(9, 9, 11, 0.86)) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+.d-flex.justify-end.flex-wrap.align-stretch:has(> .v-img) > .v-card.v-card--flat.justify-center.align-center::before {
+  display: none;
+}
+.d-flex.justify-end.flex-wrap.align-stretch:not(:has(> .v-img)) > .v-card.v-card--flat.justify-center.align-center {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.d-flex.justify-end.flex-wrap.align-stretch:not(:has(> .v-img)) > .v-card.v-card--flat.justify-center.align-center::before {
+  display: none;
+}
+
+/* Recipe content uses simple sections instead of nested glass cards. */
+.v-container.px-0 > .v-card.d-print-none {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  overflow: visible;
+}
+.v-container.px-0 > .v-card.d-print-none::before {
+  display: none;
+}
+.v-list-item.ingredient-list-item {
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 4px 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.v-list-item.ingredient-list-item:hover {
+  background: rgba(248, 113, 113, 0.06) !important;
+}
+.v-list-item.ingredient-list-item:focus-within {
+  outline: 2px solid #f87171 !important;
+  outline-offset: -2px;
+}
+.v-container.px-0 > .v-card.d-print-none > .v-card-text .v-list {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.v-container.px-0 > .v-card.d-print-none > .v-card-text .v-list .v-list-item {
+  min-height: 32px !important;
+  margin: 0 !important;
+  padding: 4px 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.v-container.px-0 > .v-card.d-print-none > .v-card-text .v-col > div:has(> .v-card > .v-card-text .v-chip.v-chip--label) > .v-card,
+.v-container.px-0 > .v-card.d-print-none > .v-card-text .v-col > div:has(> .v-card > .v-card-text .v-chip.v-chip--label) > div > .v-card {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.v-container.px-0 > .v-card.d-print-none > .v-card-text .v-col > div:has(> .v-card > .v-card-text .v-chip.v-chip--label) > .v-card::before,
+.v-container.px-0 > .v-card.d-print-none > .v-card-text .v-col > div:has(> .v-card > .v-card-text .v-chip.v-chip--label) > div > .v-card::before {
+  display: none;
+}
+
+/* Keep complete instructions visible and distinguish steps with dividers. */
+section:has(.recipe-step-title) .list-group-item > .v-card:has(> .recipe-step-title) {
+  height: auto !important;
+  max-height: none !important;
+  margin-block: 0 !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  overflow: visible !important;
+}
+section:has(.recipe-step-title) .list-group-item > .v-card:has(> .recipe-step-title)::before {
+  display: none;
+}
+section:has(.recipe-step-title) .list-group-item > .v-card:has(> .recipe-step-title):hover {
+  background: rgba(248, 113, 113, 0.06) !important;
+}
+section:has(.recipe-step-title) .list-group-item > .v-card:has(> .recipe-step-title):focus-visible {
+  outline: 2px solid #f87171 !important;
+  outline-offset: -2px;
+}
+section:has(.recipe-step-title) .list-group-item > .v-card:has(> .recipe-step-title) .recipe-step-title,
+section:has(.recipe-step-title) .list-group-item > .v-card:has(> .recipe-step-title) .v-card-text.markdown,
+section:has(.recipe-step-title) .list-group-item > .v-card:has(> .recipe-step-title) .v-card-text.markdown p {
+  display: block !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  white-space: normal !important;
+}
+
+/* Cookbook list: one surface with compact, separated rows. */
+.lg-container .v-expansion-panels:has(> div > .v-expansion-panel.left-border) {
+  margin-top: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  border-radius: 10px !important;
+  background: rgba(24, 24, 27, 0.55) !important;
+  box-shadow: none !important;
+  overflow: hidden;
+}
+.lg-container .v-expansion-panels > div > .v-expansion-panel.left-border {
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.lg-container .v-expansion-panels > div > .v-expansion-panel.left-border > .v-expansion-panel__shadow {
+  display: none;
+}
+.lg-container .v-expansion-panels > div > .v-expansion-panel.left-border:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+.lg-container .v-expansion-panels > div > .v-expansion-panel.left-border > .v-expansion-panel-title {
+  min-height: 56px;
+  padding: 12px 16px;
+}
+.lg-container .v-expansion-panels > div > .v-expansion-panel.left-border > .v-expansion-panel-title:hover {
+  background: rgba(248, 113, 113, 0.06);
+}
+.lg-container .v-expansion-panels > div > .v-expansion-panel.left-border > .v-expansion-panel-title:focus-visible {
+  outline: 2px solid #f87171;
+  outline-offset: -2px;
+}
+
+/* The cookbook title and description are page content, not a card. */
+.v-container.my-0 > .v-sheet.d-flex.flex-column.w-100.pa-0.ma-0:has(> div > .v-toolbar-title) {
+  margin-bottom: 16px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  overflow: visible;
+}
+.v-container.my-0 > .v-sheet.d-flex.flex-column.w-100.pa-0.ma-0:has(> div > .v-toolbar-title)::before {
+  display: none;
+}
+
+/* Organizer sections: plain letter headings and readable compact entries. */
+section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) {
+  margin-block: 20px !important;
+}
+section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-card.pb-2 {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  overflow: visible;
+}
+section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-card.pb-2::before {
+  display: none;
+}
+section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-card.pb-2 > .v-card-title {
+  color: var(--fg-muted) !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+}
+section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .v-col > .v-card.left-border {
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  border-radius: 8px !important;
+  background: rgba(24, 24, 27, 0.45) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .v-col > .v-card.left-border:hover {
+  background: rgba(248, 113, 113, 0.08) !important;
+}
+section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .v-col > .v-card.left-border:focus-visible {
+  outline: 2px solid #f87171 !important;
+  outline-offset: -2px;
+}
+section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .v-col > .v-card.left-border .v-card-actions {
+  min-height: 52px;
+  padding: 8px 12px;
+  gap: 8px;
+}
+section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .v-col > .v-card.left-border .v-card-title {
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  font-size: 1rem !important;
+  line-height: 1.35 !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  overflow-wrap: anywhere;
+  text-overflow: clip !important;
+}
+
+/* Timeline: one event surface, with quiet dates and markers. */
+.v-sheet:has(> div > .v-row.mb-0.mt-3.mx-7) {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  overflow: visible;
+}
+.v-sheet:has(> div > .v-row.mb-0.mt-3.mx-7)::before {
+  display: none;
+}
+.v-sheet:has(> div > .v-row.mb-0.mt-3.mx-7) > div > .text-center .v-progress-circular,
+.v-sheet:has(> div > .v-row.mb-0.mt-3.mx-7) > div > .text-center .v-progress-circular .v-icon {
+  color: #f87171 !important;
+}
+#timeline-container .v-timeline-item__opposite .v-chip,
+#timeline-container .v-timeline-item__body > .v-card > .v-card-title .v-chip {
+  height: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+#timeline-container .v-timeline-item__opposite .v-chip__underlay,
+#timeline-container .v-timeline-item__opposite .v-chip__overlay,
+#timeline-container .v-timeline-item__body > .v-card > .v-card-title .v-chip__underlay,
+#timeline-container .v-timeline-item__body > .v-card > .v-card-title .v-chip__overlay {
+  display: none;
+}
+#timeline-container .v-timeline-item__opposite .v-chip__content,
+#timeline-container .v-timeline-item__body > .v-card > .v-card-title .v-chip__content {
+  color: rgba(226, 232, 240, 0.85) !important;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+#timeline-container .v-timeline-item__opposite .v-chip .v-icon,
+#timeline-container .v-timeline-item__body > .v-card > .v-card-title .v-chip .v-icon {
+  color: #f87171 !important;
+  font-size: 16px !important;
+  margin-inline-end: 6px !important;
+}
+#timeline-container .v-timeline-divider__dot {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+#timeline-container .v-timeline-divider__inner-dot {
+  width: 10px !important;
+  height: 10px !important;
+  background: #f87171 !important;
+  box-shadow: none !important;
+}
+#timeline-container .v-timeline-divider__inner-dot .v-icon {
+  visibility: hidden;
+}
+#timeline-container .v-timeline-item__body > .v-card {
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+#timeline-container .v-timeline-item__body .v-card.flat {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+#timeline-container .v-timeline-item__body .v-card.flat::before {
+  display: none;
+}
+#timeline-container .v-timeline-item__body .v-card.flat:focus-visible {
+  outline: 2px solid #f87171 !important;
+  outline-offset: -2px;
+}
+@media (max-width: 960px) {
+  #timeline-container .v-timeline-item__body .v-card.flat:has(> .v-img.rounded-sm) {
+    display: grid;
+    grid-template-columns: 118px minmax(0, 1fr);
+    align-items: center;
+  }
+  /* Keep Vuetify's loader from occupying the image or content grid cell. */
+  #timeline-container .v-timeline-item__body .v-card.flat:has(> .v-img.rounded-sm) > .v-card__loader {
+    position: absolute;
+  }
+  #timeline-container .v-timeline-item__body .v-card.flat > .v-img.rounded-sm {
+    width: 118px !important;
+    height: 118px !important;
+    min-height: 0 !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+  }
+}
+
+/* RecipeChips is shared by tags, categories, and tools. */
+.v-chip.v-chip--label.mr-1.mt-1 {
+  height: auto !important;
+  max-width: 100%;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.v-chip.v-chip--label.mr-1.mt-1 > .v-chip__underlay,
+.v-chip.v-chip--label.mr-1.mt-1 > .v-chip__overlay {
+  display: none;
+}
+.v-chip.v-chip--label.mr-1.mt-1 .v-chip__content {
+  color: var(--fg-muted) !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  overflow-wrap: anywhere;
+  line-height: 1.3;
+}
+.v-chip.v-chip--label.mr-1.mt-1:hover .v-chip__content,
+.v-chip.v-chip--label.mr-1.mt-1:focus-visible .v-chip__content {
+  color: var(--fg-strong) !important;
+  text-decoration: underline;
+}
+.recipe-card-tags {
+  flex-wrap: wrap !important;
+  overflow: visible !important;
+  gap: 4px 12px !important;
+}
+.recipe-card-tags .v-chip {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+.v-card .flex-nowrap:has(> div > .v-chip.v-chip--label.mr-1.mt-1) {
+  flex-wrap: wrap !important;
+  overflow: visible !important;
+  white-space: normal !important;
+}
