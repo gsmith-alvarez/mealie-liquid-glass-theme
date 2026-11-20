@@ -839,6 +839,7 @@ hr {
 .ingredient-list-item:has(.v-checkbox-btn input:checked) .ingredient-item {
   text-decoration: line-through;
   text-decoration-color: #ffad4d;
+  text-decoration-thickness: 3px;
 }
 .v-checkbox-btn .v-selection-control__input:has(input:focus-visible)::after {
   outline: 2px solid #ffad4d;
