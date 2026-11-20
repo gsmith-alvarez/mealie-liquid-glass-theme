@@ -19,10 +19,9 @@ have accessible fallbacks.
 Recipe cards use centered image crops; open a recipe and click its photo to
 view the complete image in Mealie's lightbox.
 Recipe categories, tags, and nutrition use flat sections on desktop and mobile.
-Switches use a simple outlined track; checkboxes use an orange flip-disc
-treatment inspired by Uiverse.io's chase2k25.
-Recipe ingredients show an X until checked, then flip to a check and strike
-through the ingredient text.
+Switches use a simple outlined track; checkboxes flip from an X to an orange
+check, inspired by Uiverse.io's chase2k25. Checked recipe ingredients also
+strike through their text.
 Create, filter, and planner controls use capsule-shaped translucent amber glass
 with soft reflections, a localized glow, a directional rim, and a pressed tilt.
 Cook mode's entry and exit use matching red glass; destructive actions retain
