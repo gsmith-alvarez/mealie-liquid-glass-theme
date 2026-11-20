@@ -1218,7 +1218,9 @@ div[style*="height"]:has(> .v-card.mx-auto > .v-list-item) {
   background: transparent !important;
   box-shadow: none !important;
 }
-.v-container.px-0 > .v-card.d-print-none > .v-card-text .v-col > div:has(> .v-card > .v-card-text .v-chip.v-chip--label) > .v-card,
+/* Organizers are nested one level deeper on mobile; nutrition may stand alone. */
+.v-container.px-0 > .v-card.d-print-none > .v-card-text :is(.v-col > div, .v-col > div > div) > .v-card:has(> .v-card-title.py-2 + .v-divider.mx-2 + .v-card-text),
+.v-container.px-0 > .v-card.d-print-none > .v-card-text :is(.v-col > div, .v-col > div > div) > div > .v-card:has(> .v-card-title.pt-2.pb-0 + .v-card-subtitle.pb-1 + .v-divider.mx-2.my-1),
 .v-container.px-0 > .v-card.d-print-none > .v-card-text .v-col > div:has(> .v-card > .v-card-text .v-chip.v-chip--label) > div > .v-card {
   border: 0 !important;
   border-radius: 0 !important;
@@ -1227,9 +1229,18 @@ div[style*="height"]:has(> .v-card.mx-auto > .v-list-item) {
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
 }
-.v-container.px-0 > .v-card.d-print-none > .v-card-text .v-col > div:has(> .v-card > .v-card-text .v-chip.v-chip--label) > .v-card::before,
+.v-container.px-0 > .v-card.d-print-none > .v-card-text :is(.v-col > div, .v-col > div > div) > .v-card:has(> .v-card-title.py-2 + .v-divider.mx-2 + .v-card-text)::before,
+.v-container.px-0 > .v-card.d-print-none > .v-card-text :is(.v-col > div, .v-col > div > div) > div > .v-card:has(> .v-card-title.pt-2.pb-0 + .v-card-subtitle.pb-1 + .v-divider.mx-2.my-1)::before,
 .v-container.px-0 > .v-card.d-print-none > .v-card-text .v-col > div:has(> .v-card > .v-card-text .v-chip.v-chip--label) > div > .v-card::before {
   display: none;
+}
+.v-container.px-0 > .v-card.d-print-none > .v-card-text .v-col .v-card > .v-card-text > div:has(> .v-chip.v-chip--label.mr-1.mt-1) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+.v-container.px-0 > .v-card.d-print-none > .v-card-text .v-col .v-card > .v-card-text > div > .v-chip.v-chip--label.mr-1.mt-1 {
+  margin: 0 !important;
 }
 
 /* Keep complete instructions visible and distinguish steps with dividers. */

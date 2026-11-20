@@ -11,6 +11,7 @@ the theme used by the server configuration; the upstream installation instructio
 
 Recipe cards use centered image crops; open a recipe and click its photo to
 view the complete image in Mealie's lightbox.
+Recipe categories, tags, and nutrition use flat sections on desktop and mobile.
 
 ## Pics
 
