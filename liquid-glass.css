@@ -1883,10 +1883,8 @@ section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .
   --primary-action-blur: none;
   --cook-action-bg: #5b262a;
   --cook-action-border: rgba(255, 204, 200, 0.58);
-  --action-glow: rgba(255, 154, 54, 0.08);
-  --cook-action-glow: rgba(255, 75, 75, 0.08);
-  --primary-action-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05), inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.3), 0 0.25em 0.125em -0.125em rgba(0, 0, 0, 0.2), inset 0 0 0.1em 0.2em rgba(255, 255, 255, 0.12);
-  --primary-action-pressed-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05), inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.3), 0 0.125em 0.125em -0.125em rgba(0, 0, 0, 0.2), inset 0 0 0.1em 0.2em rgba(255, 255, 255, 0.12), 0 0.225em 0.05em rgba(0, 0, 0, 0.05), 0 0.25em 0 rgba(255, 255, 255, 0.5), inset 0 0.25em 0.05em rgba(0, 0, 0, 0.15);
+  --primary-action-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.22), inset 0 -1px 1px rgba(255, 255, 255, 0.12);
+  --primary-action-pressed-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.20);
 }
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   :root {
@@ -1909,7 +1907,7 @@ section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .
   border-radius: 999vw !important;
   background: var(--primary-action-bg) !important;
   color: var(--primary-action-fg) !important;
-  box-shadow: var(--primary-action-shadow), 0 0 14px var(--action-glow) !important;
+  box-shadow: var(--primary-action-shadow) !important;
   backdrop-filter: var(--primary-action-blur) !important;
   -webkit-backdrop-filter: var(--primary-action-blur) !important;
   transition: transform 400ms cubic-bezier(0.25, 1, 0.5, 1), box-shadow 400ms cubic-bezier(0.25, 1, 0.5, 1), backdrop-filter 400ms cubic-bezier(0.25, 1, 0.5, 1);
@@ -1926,7 +1924,6 @@ section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .
 ):not(.v-btn--disabled):not(:disabled) :is(.v-btn__content, .v-icon, svg) {
   color: var(--primary-action-fg) !important;
   fill: currentColor !important;
-  text-shadow: 0 0.25em 0.05em rgba(0, 0, 0, 0.25);
 }
 :is(
   .v-navigation-drawer__content > .v-btn.mt-3,
@@ -1939,7 +1936,7 @@ section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .
   .v-main .v-sheet + .v-sheet + .v-btn.v-btn--icon[style*="position: fixed"]
 ):not(.v-btn--disabled):not(:disabled):active {
   transform: perspective(600px) rotateX(25deg);
-  box-shadow: var(--primary-action-pressed-shadow), 0 0 14px var(--action-glow) !important;
+  box-shadow: var(--primary-action-pressed-shadow) !important;
 }
 /* Moving reflection and directional glass rim stay outside Vuetify's hit target. */
 :is(
@@ -1979,7 +1976,7 @@ section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .
   @media not all and (hover: none) and (pointer: coarse) {
     &:hover {
       transform: scale(0.975);
-      box-shadow: inset 0 0.125em 0.125em rgba(0, 0, 0, 0.05), inset 0 -0.125em 0.125em rgba(255, 255, 255, 0.3), 0 0.15em 0.05em -0.1em rgba(0, 0, 0, 0.25), inset 0 0 0.05em 0.1em rgba(255, 255, 255, 0.35), 0 0 14px var(--action-glow) !important;
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.32), inset 0 -1px 1px rgba(255, 255, 255, 0.16) !important;
     }
     &:hover::before {
       background-position: 25% 50%;
@@ -1989,7 +1986,7 @@ section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .
     }
     &:active {
       transform: perspective(600px) rotateX(25deg);
-      box-shadow: var(--primary-action-pressed-shadow), 0 0 14px var(--action-glow) !important;
+      box-shadow: var(--primary-action-pressed-shadow) !important;
     }
   }
   @media (prefers-reduced-motion: reduce) {
@@ -2007,11 +2004,6 @@ section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .
       display: none !important;
     }
   }
-  @media (forced-colors: active) {
-    & :is(.v-btn__content, .v-icon, svg) {
-      text-shadow: none;
-    }
-  }
 }
 /* Keep entering and exiting cook mode visually paired. */
 :is(
@@ -2020,7 +2012,6 @@ section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .
 ) {
   --primary-action-bg: var(--cook-action-bg);
   --primary-action-border: var(--cook-action-border);
-  --action-glow: var(--cook-action-glow);
 }
 @media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
   :root {

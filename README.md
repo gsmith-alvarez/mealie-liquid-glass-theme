@@ -23,7 +23,7 @@ Switches use a simple outlined track; checkboxes flip from an X to an orange
 check, inspired by Uiverse.io's chase2k25. Checked recipe ingredients also
 strike through their text.
 Create, filter, and planner controls use capsule-shaped translucent amber glass
-with soft reflections, a localized glow, a directional rim, and a pressed tilt.
+with soft reflections, a directional rim, and a pressed tilt without outer glow.
 Cook mode's entry and exit use matching red glass; destructive actions retain
 their warning colors.
 The planner date menu keeps its calendar and week settings on one surface, with
