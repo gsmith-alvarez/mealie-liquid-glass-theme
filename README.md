@@ -1,8 +1,8 @@
 # Mealie Liquid Glass Theme
 
 A dark **Liquid Glass** custom theme for [Mealie](https://github.com/mealie-recipes/mealie):
-neutral charcoal surfaces, orange accents, translucent glass cards, softened borders,
-and cache-busted CSS injection.
+neutral charcoal content surfaces, orange accents, and translucent navigation
+and controls with softened borders.
 
 This fork of [thorethy1/mealie-liquid-glass-theme](https://github.com/thorethy1/mealie-liquid-glass-theme)
 includes refinements for navigation, search, menus, switches, checkboxes, admin
@@ -10,6 +10,11 @@ pages, cookbooks, organizers, the meal planner, timeline, and recipe pages. It
 is the source of the theme used by the server configuration; the upstream
 installation instructions below still apply.
 Visual direction is inspired by [VLC Redesign](https://github.com/KuchiSofts/vlc-redesign).
+The material follows [Apple's guidance on Liquid Glass](https://developer.apple.com/design/human-interface-guidelines/materials):
+floating controls use one regular-glass layer while content stays quiet and
+readable. This is a CSS approximation, not native optical refraction. Reduced
+transparency, increased contrast, reduced motion, and forced-colors preferences
+have accessible fallbacks.
 
 Recipe cards use centered image crops; open a recipe and click its photo to
 view the complete image in Mealie's lightbox.
