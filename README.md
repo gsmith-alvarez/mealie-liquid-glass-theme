@@ -9,6 +9,9 @@ includes refinements for navigation, search, menus, checkboxes, cookbooks,
 organizers, the meal planner, timeline, and recipe pages. It is the source of
 the theme used by the server configuration; the upstream installation instructions below still apply.
 
+Recipe cards use centered image crops; open a recipe and click its photo to
+view the complete image in Mealie's lightbox.
+
 ## Pics
 
 <img width="1320" height="2250" alt="IMG_1196" src="https://github.com/user-attachments/assets/aa382696-3e49-4473-bc98-b2b6ce14dd1f" />
