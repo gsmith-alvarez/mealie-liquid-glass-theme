@@ -1012,6 +1012,42 @@ hr {
   display: none;
 }
 
+/* Global search uses one surface with aligned heading and scrollable results. */
+.v-dialog > .v-overlay__content:has(#arrow-search) > .v-card {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100dvh - 32px);
+}
+.v-dialog > .v-overlay__content:has(#arrow-search) > .v-card > .v-card__loader {
+  position: absolute;
+}
+.v-dialog > .v-overlay__content:has(#arrow-search) > .v-card > .v-toolbar {
+  flex: none;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.v-dialog > .v-overlay__content:has(#arrow-search) > .v-card > .v-toolbar > .v-toolbar__content {
+  height: auto !important;
+  min-height: 64px;
+  padding: 12px 16px 4px;
+}
+.v-dialog > .v-overlay__content:has(#arrow-search) .arrow-search {
+  margin-inline: 0 !important;
+}
+.v-dialog > .v-overlay__content:has(#arrow-search) > .v-card > .v-card-actions {
+  flex: none;
+  min-height: 0;
+  padding: 8px 16px;
+}
+.v-dialog > .v-overlay__content:has(#arrow-search) > .v-card > .scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 0 12px 12px !important;
+}
+
 /* The planner's range and mode controls should not look like pills. */
 .range-nav .v-btn:not(.v-btn--icon) {
   border-radius: 8px !important;
