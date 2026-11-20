@@ -47,6 +47,8 @@ and [pasta](https://images.unsplash.com/photo-1473093295043-cdd812d0e601).
 ## Files
 
 - `liquid-glass.css` — the custom frontend stylesheet.
+- `flake.nix` and `nix/module.nix` — a NixOS module that packages and enables
+  the theme without a container or runtime mutation of the Nix store.
 - `entrypoint-liquid-glass.py` — Python injector: auto-discovers Mealie's frontend
   directory, injects the CSS link into every HTML file, computes a content-based
   cache-bust token, then hands off to Mealie's own entrypoint.
@@ -54,6 +56,36 @@ and [pasta](https://images.unsplash.com/photo-1473093295043-cdd812d0e601).
   injector. Kept as the documented entrypoint so the mount path stays simple.
 - `docker-compose.example.yml` — minimal compose snippet showing how to mount
   and enable the theme.
+
+## NixOS
+
+Add this fork as a flake input:
+
+```nix
+inputs.mealie-liquid-glass.url = "github:gsmith-alvarez/mealie-liquid-glass-theme";
+```
+
+Include the module in your `nixosSystem` modules list, then enable Mealie and
+the theme in your configuration:
+
+```nix
+# In nixosSystem's modules list:
+inputs.mealie-liquid-glass.nixosModules.default
+```
+
+```nix
+services.mealie.enable = true;
+services.mealie.liquidGlass.enable = true;
+```
+
+The module injects the CSS when building the Mealie frontend and uses a
+content-based cache-busting URL. It supplies matching Mealie colors as defaults;
+override any of them via `services.mealie.settings`. If using a custom Mealie
+package, set `services.mealie.liquidGlass.basePackage` instead of
+`services.mealie.package`; the package must expose its `frontend` attribute.
+Enabling the theme does not enable the Mealie service by itself.
+
+Without flakes, import `nix/module.nix` from a checkout of this repository.
 
 ## Quick start (Docker Compose)
 
@@ -116,9 +148,9 @@ That's it — no Python version-specific paths, no manual cache-bust bumps.
 
 ## Cache busting
 
-The `?v=` suffix is the first 10 hex chars of the md5 of the CSS file contents.
-Whenever you edit `liquid-glass.css`, every Mealie HTML file gets a new link
-with a new token on the next container start — no manual bumping required.
+The Docker injector uses the first 10 hex characters of the CSS file's MD5
+digest. The NixOS module uses the first 10 characters of its SHA-256 digest.
+Both change the URL when the stylesheet changes.
 
 ## Optional: align Mealie's theme variables
 
