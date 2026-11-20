@@ -831,6 +831,14 @@ hr {
 .v-checkbox-btn .v-selection-control__input:has(input:indeterminate)::after {
   content: "−";
 }
+/* Recipe ingredients use an X until checked; strike the ingredient, not its controls. */
+.ingredient-list-item .v-checkbox-btn:not(.v-selection-control--dirty) .v-selection-control__input:not(:has(input:indeterminate))::after {
+  content: "×";
+  color: #a8a29e;
+}
+.ingredient-list-item:has(.v-checkbox-btn input:checked) .ingredient-item {
+  text-decoration: line-through;
+}
 .v-checkbox-btn .v-selection-control__input:has(input:focus-visible)::after {
   outline: 2px solid #ffad4d;
   outline-offset: 3px;
