@@ -19,6 +19,8 @@ have accessible fallbacks.
 Recipe cards use centered image crops; open a recipe and click its photo to
 view the complete image in Mealie's lightbox.
 Recipe categories, tags, and nutrition use flat sections on desktop and mobile.
+Switches use a simple outlined track; checkboxes use an orange flip-disc
+treatment inspired by Uiverse.io's chase2k25.
 
 ## Screenshots
 
