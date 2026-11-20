@@ -5,13 +5,10 @@
   --glass-bg: rgba(24, 24, 27, 0.58);
   --glass-bg-strong: rgba(24, 24, 27, 0.78);
   --glass-border: rgba(255, 255, 255, 0.12);
-  --glass-border-hot: rgba(248, 113, 113, 0.30);
+  --glass-border-hot: rgba(255, 154, 54, 0.30);
   --glass-shadow: 0 20px 60px rgba(0, 0, 0, 0.38), 0 2px 10px rgba(0, 0, 0, 0.24);
-  --glass-radius: 22px;
+  --glass-radius: 10px;
   --glass-radius-pill: 999px;
-  --hot-red: #ef4444;
-  --hot-red-soft: #f87171;
-  --hot-red-text: #fecaca;
   --deep-bg: #09090b;
   /* Glass surfaces reused across cards, alerts, inputs. */
   --glass-surface: linear-gradient(145deg, rgba(39, 39, 42, 0.72), rgba(24, 24, 27, 0.56));
@@ -33,12 +30,7 @@ body,
 #__nuxt,
 .v-application {
   min-height: 100%;
-  background:
-    radial-gradient(circle at 18% 8%, rgba(239, 68, 68, 0.28), transparent 34rem),
-    radial-gradient(circle at 88% 20%, rgba(244, 63, 94, 0.22), transparent 30rem),
-    radial-gradient(ellipse at 50% 100%, rgba(185, 28, 28, 0.42), rgba(127, 29, 29, 0.32) 42%, transparent 78%),
-    linear-gradient(180deg, #09090b 0%, #080708 38%, #140a0b 72%, #220a0a 100%) !important;
-  background-attachment: fixed !important;
+  background: #151515 !important;
   color: var(--fg) !important;
   isolation: isolate;
 }
@@ -46,26 +38,13 @@ body,
 html,
 body {
   min-height: 100vh;
-  background-color: #09090b !important;
+  background-color: #151515 !important;
 }
 
 body {
   margin: 0;
 }
 
-/* Keep the red liquid background visible on every route, including recipe detail pages. */
-.v-application::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background:
-    radial-gradient(circle at 18% 8%, rgba(239, 68, 68, 0.20), transparent 34rem),
-    radial-gradient(circle at 88% 20%, rgba(244, 63, 94, 0.16), transparent 30rem),
-    radial-gradient(ellipse at 50% 100%, rgba(185, 28, 28, 0.34), rgba(127, 29, 29, 0.22) 38%, transparent 76%),
-    linear-gradient(180deg, #09090b 0%, #0a0a0a 42%, #120809 76%, #1a0708 100%);
-}
 
 .v-application__wrap,
 .v-main,
@@ -75,16 +54,6 @@ body {
   z-index: 1;
 }
 
-.v-main::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  min-height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  background:
-    linear-gradient(180deg, transparent 0%, rgba(127, 29, 29, 0.08) 44%, rgba(185, 28, 28, 0.18) 100%);
-}
 
 .v-main > * {
   position: relative;
@@ -104,16 +73,6 @@ main,
   background-color: transparent !important;
 }
 
-/* Login/blank-page containers can be taller than the viewport; paint the full
-   container so the red sunset continues to the actual page end, not just 100vh. */
-.v-container.fill-height.bg-off-white {
-  background:
-    radial-gradient(circle at 18% 8%, rgba(239, 68, 68, 0.22), transparent 34rem),
-    radial-gradient(circle at 88% 20%, rgba(244, 63, 94, 0.18), transparent 30rem),
-    linear-gradient(180deg, #09090b 0%, #080708 38%, #140a0b 72%, #220a0a 100%) !important;
-  background-attachment: scroll !important;
-  background-size: 100% 100% !important;
-}
 
 .v-main,
 main {
@@ -165,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
 .v-alert.bg-info,
 .v-alert[class*="bg-info"] {
   background: var(--glass-surface-strong) !important;
-  border: 1px solid rgba(248, 113, 113, 0.24) !important;
+  border: 1px solid rgba(255, 154, 54, 0.24) !important;
   box-shadow: 0 16px 42px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
   color: var(--fg-strong) !important;
   backdrop-filter: var(--glass-blur-strong) !important;
@@ -180,8 +139,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .v-alert .v-btn,
 .v-alert button {
-  background: rgba(239, 68, 68, 0.16) !important;
-  border: 1px solid rgba(248, 113, 113, 0.26) !important;
+  background: rgba(255, 136, 0, 0.16) !important;
+  border: 1px solid rgba(255, 154, 54, 0.26) !important;
   border-radius: 12px !important;
   color: #fff !important;
   min-width: 34px !important;
@@ -192,7 +151,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .v-alert .v-btn:hover,
 .v-alert button:hover {
-  background: rgba(239, 68, 68, 0.28) !important;
+  background: rgba(255, 136, 0, 0.28) !important;
 }
 
 
@@ -294,24 +253,24 @@ header.v-toolbar,
   min-height: 72px !important;
   padding: 12px 14px !important;
   background: linear-gradient(145deg, rgba(39, 39, 42, 0.58), rgba(24, 24, 27, 0.38)) !important;
-  border: 1px solid rgba(248, 113, 113, 0.16) !important;
+  border: 1px solid rgba(255, 154, 54, 0.16) !important;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.08) !important;
 }
 
 .v-list-item:hover,
 .v-list-item--active {
-  background: linear-gradient(135deg, rgba(220, 38, 38, 0.24), rgba(248, 113, 113, 0.12)) !important;
-  box-shadow: inset 0 0 0 1px rgba(248, 113, 113, 0.22), 0 10px 28px rgba(220, 38, 38, 0.16) !important;
+  background: linear-gradient(135deg, rgba(220, 105, 0, 0.24), rgba(255, 154, 54, 0.12)) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 154, 54, 0.22), 0 10px 28px rgba(220, 105, 0, 0.16) !important;
 }
 
 .v-list-item--active .v-list-item-title,
 .v-list-item--active .v-icon {
-  color: #ff8a8a !important;
+  color: #ffb55b !important;
 }
 
-/* Buttons: more dimensional, less flat */
+/* Compact corners keep controls distinct without nesting pills. */
 .v-btn:not(.v-btn--variant-text):not(.v-btn--variant-plain) {
-  border-radius: var(--glass-radius-pill) !important;
+  border-radius: 8px !important;
   text-transform: none !important;
   letter-spacing: 0.01em !important;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255,255,255,0.16) !important;
@@ -319,60 +278,47 @@ header.v-toolbar,
 
 .v-btn.bg-primary,
 .v-btn.bg-accent,
-.v-btn.bg-secondary,
-.v-btn.bg-success,
-.v-btn[class*="bg-green"],
-.v-btn[class*="bg-red"] {
-  background: linear-gradient(135deg, #dc2626 0%, #ef4444 58%, #fb7185 100%) !important;
-  color: #fff !important;
-  border: 1px solid rgba(254, 202, 202, 0.34) !important;
+.v-btn.bg-secondary {
+  background: #ff8800 !important;
+  color: #1a1108 !important;
+  border: 1px solid rgba(255, 208, 143, 0.42) !important;
 }
 
-/* Drawer create button: make only substantial drawer actions red, not every tiny icon/text action. */
+/* Reserve the prominent orange action for the drawer's Create button. */
 .v-navigation-drawer .v-btn:not(.v-btn--icon):not(.v-btn--variant-text):not(.v-btn--variant-plain),
 .v-navigation-drawer .v-btn.bg-secondary,
 .v-navigation-drawer .v-btn--variant-tonal,
 .v-navigation-drawer .v-btn--variant-elevated {
-  background: linear-gradient(135deg, #dc2626 0%, #ef4444 58%, #fb7185 100%) !important;
-  color: #fff !important;
-  border: 1px solid rgba(254, 202, 202, 0.34) !important;
-  box-shadow: 0 14px 34px rgba(220, 38, 38, 0.22), inset 0 1px 0 rgba(255,255,255,0.18) !important;
+  background: #ff8800 !important;
+  color: #1a1108 !important;
+  border: 1px solid rgba(255, 208, 143, 0.42) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18) !important;
 }
 
-.v-btn.bg-success .v-icon,
-.v-btn.bg-success svg,
-.v-btn.bg-secondary .v-icon,
-.v-btn.bg-secondary svg,
-.v-btn[class*="bg-green"] .v-icon,
-.v-btn[class*="bg-green"] svg,
-.v-navigation-drawer .v-btn:not(.v-btn--variant-text):not(.v-btn--variant-plain) .v-icon,
-.v-navigation-drawer .v-btn:not(.v-btn--variant-text):not(.v-btn--variant-plain) svg {
-  color: #fff !important;
+.v-btn:is(.bg-primary, .bg-accent, .bg-secondary) :is(.v-btn__content, .v-icon, svg),
+.v-navigation-drawer .v-btn:not(.v-btn--icon):not(.v-btn--variant-text):not(.v-btn--variant-plain) :is(.v-btn__content, .v-icon, svg) {
+  color: #1a1108 !important;
   fill: currentColor !important;
 }
 
-/* Remove the pale grey press/focus outlines from Vuetify controls; keep a subtle red touch feedback. */
+/* Keep focus visible for keyboard navigation without highlighting mouse clicks. */
 .v-btn,
 .v-list-item,
 .v-selection-control,
 .v-field,
 .v-chip {
-  outline: none !important;
-  -webkit-tap-highlight-color: transparent !important;
+  -webkit-tap-highlight-color: transparent;
 }
-
-.v-btn:focus,
 .v-btn:focus-visible,
-.v-list-item:focus,
 .v-list-item:focus-visible,
-.v-selection-control:focus-within,
-.v-field:focus-within {
-  outline: none !important;
+.v-chip:focus-visible {
+  outline: 2px solid #ffb55b !important;
+  outline-offset: 2px;
 }
 
 .v-btn__overlay,
 .v-list-item__overlay {
-  background-color: rgba(248, 113, 113, 0.12) !important;
+  background-color: rgba(255, 154, 54, 0.12) !important;
 }
 
 .v-btn:hover {
@@ -380,17 +326,17 @@ header.v-toolbar,
   filter: brightness(1.06);
 }
 
-/* Text-primary action buttons like Cook Mode: glassy red CTA instead of plain text. */
+/* Text-primary action buttons keep a subdued orange treatment. */
 .v-btn.v-btn--variant-text.text-primary:not(.v-btn--icon) {
   min-height: 42px !important;
   padding-inline: 18px !important;
   border-radius: var(--glass-radius-pill) !important;
   background:
-    linear-gradient(135deg, rgba(220, 38, 38, 0.30), rgba(248, 113, 113, 0.16)) !important;
-  border: 1px solid rgba(248, 113, 113, 0.38) !important;
+    linear-gradient(135deg, rgba(220, 105, 0, 0.30), rgba(255, 154, 54, 0.16)) !important;
+  border: 1px solid rgba(255, 154, 54, 0.38) !important;
   color: #fff !important;
   box-shadow:
-    0 14px 34px rgba(220, 38, 38, 0.18),
+    0 14px 34px rgba(220, 105, 0, 0.18),
     inset 0 1px 0 rgba(255,255,255,0.18) !important;
   backdrop-filter: var(--glass-blur) !important;
   -webkit-backdrop-filter: var(--glass-blur) !important;
@@ -398,15 +344,15 @@ header.v-toolbar,
 
 .v-btn.v-btn--variant-text.text-primary:not(.v-btn--icon) .v-icon,
 .v-btn.v-btn--variant-text.text-primary:not(.v-btn--icon) svg {
-  color: #fecaca !important;
+  color: #ffdcaf !important;
   fill: currentColor !important;
 }
 
 .v-btn.v-btn--variant-text.text-primary:not(.v-btn--icon):hover {
   background:
-    linear-gradient(135deg, rgba(220, 38, 38, 0.46), rgba(248, 113, 113, 0.24)) !important;
+    linear-gradient(135deg, rgba(220, 105, 0, 0.46), rgba(255, 154, 54, 0.24)) !important;
   box-shadow:
-    0 18px 42px rgba(220, 38, 38, 0.26),
+    0 18px 42px rgba(220, 105, 0, 0.26),
     inset 0 1px 0 rgba(255,255,255,0.24) !important;
 }
 
@@ -414,15 +360,15 @@ header.v-toolbar,
 .v-btn.v-btn--variant-flat.v-btn--icon,
 .v-btn.v-btn--variant-elevated.v-btn--icon {
   background: linear-gradient(145deg, rgba(39, 39, 42, 0.86), rgba(24, 24, 27, 0.72)) !important;
-  border: 1px solid rgba(248, 113, 113, 0.24) !important;
-  color: #fecaca !important;
+  border: 1px solid rgba(255, 154, 54, 0.24) !important;
+  color: #ffdcaf !important;
 }
 
 .v-btn.v-btn--variant-flat.v-btn--icon .v-icon,
 .v-btn.v-btn--variant-elevated.v-btn--icon .v-icon,
 .v-btn.v-btn--variant-flat.v-btn--icon svg,
 .v-btn.v-btn--variant-elevated.v-btn--icon svg {
-  color: #fecaca !important;
+  color: #ffdcaf !important;
   fill: currentColor !important;
 }
 
@@ -436,10 +382,8 @@ header.v-toolbar,
 
 /* Recipe detail hero/description panel: match the lower liquid-glass recipe sections. */
 .v-card--flat.d-flex.flex-column.justify-center.align-center {
-  background:
-    radial-gradient(circle at 18% 0%, rgba(248, 113, 113, 0.14), transparent 18rem),
-    var(--glass-surface) !important;
-  border: 1px solid rgba(248, 113, 113, 0.18) !important;
+  background: var(--glass-surface) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
   box-shadow: var(--glass-shadow) !important;
   backdrop-filter: var(--glass-blur-strong) !important;
   -webkit-backdrop-filter: var(--glass-blur-strong) !important;
@@ -498,7 +442,7 @@ header.v-toolbar,
 .v-select,
 .v-text-field,
 .v-textarea {
-  border-radius: 16px !important;
+  border-radius: 8px !important;
 }
 
 /* Glass switch: a translucent track and thumb, without a second outer pill. */
@@ -539,9 +483,9 @@ header.v-toolbar,
   min-width: calc(52px * var(--v-switch-scale, 1)) !important;
 }
 .v-switch .v-selection-control--dirty .v-switch__track {
-  border-color: rgba(255, 177, 184, 0.60) !important;
-  background: linear-gradient(145deg, rgba(248, 113, 113, 0.85), rgba(185, 28, 28, 0.78)) !important;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.28), inset 0 -2px 5px rgba(100, 0, 0, 0.22), 0 0 12px rgba(220, 38, 38, 0.18) !important;
+  border-color: rgba(255, 196, 118, 0.60) !important;
+  background: linear-gradient(145deg, rgba(255, 154, 54, 0.85), rgba(184, 84, 0, 0.78)) !important;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.28), inset 0 -2px 5px rgba(100, 45, 0, 0.22), 0 0 12px rgba(220, 105, 0, 0.18) !important;
 }
 .v-switch .v-switch__thumb {
   width: var(--v-switch-thumb-width, 20px) !important;
@@ -551,7 +495,7 @@ header.v-toolbar,
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.9), 0 2px 6px rgba(0, 0, 0, 0.35) !important;
 }
 .v-switch .v-selection-control:has(input:focus-visible) .v-switch__track {
-  outline: 2px solid #fda4af;
+  outline: 2px solid #ffd18a;
   outline-offset: 3px;
 }
 @media (forced-colors: active) {
@@ -583,9 +527,9 @@ header.v-toolbar,
 
 .v-checkbox .v-selection-control__input {
   border-radius: 10px !important;
-  color: #fecaca !important;
+  color: #ffdcaf !important;
   background: linear-gradient(145deg, rgba(39,39,42,0.72), rgba(24,24,27,0.52)) !important;
-  border: 1px solid rgba(248, 113, 113, 0.24) !important;
+  border: 1px solid rgba(255, 154, 54, 0.24) !important;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.10), 0 8px 18px rgba(0,0,0,0.18) !important;
   transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
   flex: 0 0 auto !important;
@@ -617,15 +561,15 @@ header.v-toolbar,
 
 .v-checkbox .v-selection-control:hover .v-selection-control__input {
   transform: scale(1.05);
-  border-color: rgba(248, 113, 113, 0.46) !important;
-  box-shadow: 0 0 0 3px rgba(248,113,113,0.12), 0 10px 24px rgba(0,0,0,0.24) !important;
+  border-color: rgba(255, 154, 54, 0.46) !important;
+  box-shadow: 0 0 0 3px rgba(255, 154, 54,0.12), 0 10px 24px rgba(0,0,0,0.24) !important;
 }
 
 .v-checkbox:has(input:checked) .v-selection-control__input,
 .v-checkbox .v-selection-control--dirty .v-selection-control__input {
-  background: linear-gradient(135deg, #dc2626, #fb7185) !important;
-  border-color: rgba(254, 202, 202, 0.50) !important;
-  box-shadow: 0 0 0 3px rgba(248,113,113,0.16), 0 10px 26px rgba(220,38,38,0.26), inset 0 1px 0 rgba(255,255,255,0.28) !important;
+  background: linear-gradient(135deg, #d96500, #ffb34d) !important;
+  border-color: rgba(255, 215, 164, 0.50) !important;
+  box-shadow: 0 0 0 3px rgba(255, 154, 54,0.16), 0 10px 26px rgba(220, 105, 0,0.26), inset 0 1px 0 rgba(255,255,255,0.28) !important;
 }
 
 .v-checkbox:has(input:checked) .v-selection-control__input::after {
@@ -647,7 +591,7 @@ header.v-toolbar,
 
 .v-checkbox .v-icon,
 .v-checkbox svg {
-  color: #fecaca !important;
+  color: #ffdcaf !important;
   fill: currentColor !important;
 }
 
@@ -688,9 +632,25 @@ header.v-toolbar,
   line-height: 1.2 !important;
 }
 
+/* Framed filled and underlined inputs need room for their floating label. */
+.v-field:is(.v-field--variant-filled, .v-field--variant-underlined):has(.v-field-label--floating) .v-field__input {
+  min-height: 56px !important;
+  padding-top: 22px !important;
+  padding-bottom: 6px !important;
+}
+.v-field:is(.v-field--variant-filled, .v-field--variant-underlined) .v-field-label--floating {
+  top: 4px !important;
+  transform: none !important;
+  font-size: 12px !important;
+}
+.v-field:is(.v-field--variant-filled, .v-field--variant-underlined) .v-field__outline::before,
+.v-field:is(.v-field--variant-filled, .v-field--variant-underlined) .v-field__outline::after {
+  display: none;
+}
+
 .v-field--focused {
-  border-color: rgba(248, 113, 113, 0.42) !important;
-  box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.13), inset 0 1px 0 rgba(255,255,255,0.08) !important;
+  border-color: rgba(255, 154, 54, 0.42) !important;
+  box-shadow: 0 0 0 3px rgba(255, 154, 54, 0.13), inset 0 1px 0 rgba(255,255,255,0.08) !important;
 }
 
 /* Recipe images/cards: softer, premium feel */
@@ -711,7 +671,7 @@ img {
   align-items: center !important;
   justify-content: center !important;
   background: linear-gradient(145deg, rgba(39, 39, 42, 0.78), rgba(24, 24, 27, 0.60)) !important;
-  border: 1px solid rgba(248, 113, 113, 0.14) !important;
+  border: 1px solid rgba(255, 154, 54, 0.14) !important;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.08) !important;
 }
 
@@ -766,7 +726,7 @@ img {
     display: grid !important;
     place-items: center !important;
     background: linear-gradient(145deg, rgba(39, 39, 42, 0.78), rgba(24, 24, 27, 0.60)) !important;
-    border: 1px solid rgba(248, 113, 113, 0.14) !important;
+    border: 1px solid rgba(255, 154, 54, 0.14) !important;
   }
 
   .v-card--link .v-list-item__prepend .icon-slot .icon-position {
@@ -797,26 +757,26 @@ hr {
 
 .v-table tbody tr:hover,
 .v-data-table tbody tr:hover {
-  background: rgba(248, 113, 113, 0.08) !important;
+  background: rgba(255, 154, 54, 0.08) !important;
 }
 
 /* Chips/badges */
 .v-chip {
   border-radius: var(--glass-radius-pill) !important;
-  background: rgba(248, 113, 113, 0.14) !important;
-  border: 1px solid rgba(248, 113, 113, 0.20) !important;
+  background: rgba(255, 154, 54, 0.14) !important;
+  border: 1px solid rgba(255, 154, 54, 0.20) !important;
   backdrop-filter: blur(14px) !important;
 }
 
 /* Scrollbar polish */
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(248, 113, 113, 0.55) rgba(24, 24, 27, 0.40);
+  scrollbar-color: rgba(255, 154, 54, 0.55) rgba(24, 24, 27, 0.40);
 }
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: rgba(24, 24, 27, 0.40); }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #ef4444, #991b1b);
+  background: linear-gradient(180deg, #ff8800, #a94d00);
   border-radius: var(--glass-radius-pill);
   border: 2px solid rgba(9, 9, 11, 0.85);
 }
@@ -854,14 +814,14 @@ hr {
 }
 .v-navigation-drawer .v-list .v-list-item:hover,
 .v-navigation-drawer .v-list .v-list-item:focus-visible {
-  background: rgba(248, 113, 113, 0.07) !important;
+  background: rgba(255, 154, 54, 0.07) !important;
 }
 .v-navigation-drawer .v-list .v-list-item--active {
-  background: rgba(248, 113, 113, 0.07) !important;
-  box-shadow: inset 3px 0 0 #f87171 !important;
+  background: rgba(255, 154, 54, 0.07) !important;
+  box-shadow: inset 3px 0 0 #ffad4d !important;
 }
 .v-navigation-drawer .v-list .v-list-item:focus-visible {
-  outline: 2px solid #f87171 !important;
+  outline: 2px solid #ffad4d !important;
   outline-offset: -2px;
 }
 .v-navigation-drawer .v-list-group__items .v-list-item {
@@ -903,10 +863,10 @@ hr {
 }
 .v-checkbox .v-selection-control--dirty .v-icon,
 .v-checkbox .v-selection-control--dirty svg {
-  color: #f87171 !important;
+  color: #ffad4d !important;
 }
 .v-checkbox .v-selection-control__input:has(input:focus-visible) {
-  outline: 2px solid #f87171 !important;
+  outline: 2px solid #ffad4d !important;
   outline-offset: 2px;
 }
 
@@ -957,14 +917,14 @@ hr {
 }
 .v-menu > .v-overlay__content .v-list-item:hover,
 .v-menu > .v-overlay__content .v-list-item:focus-visible {
-  background: rgba(248, 113, 113, 0.08) !important;
+  background: rgba(255, 154, 54, 0.08) !important;
 }
 .v-menu > .v-overlay__content .v-list-item--active {
-  background: rgba(248, 113, 113, 0.08) !important;
-  box-shadow: inset 3px 0 0 #f87171 !important;
+  background: rgba(255, 154, 54, 0.08) !important;
+  box-shadow: inset 3px 0 0 #ffad4d !important;
 }
 .v-menu > .v-overlay__content .v-list-item:focus-visible {
-  outline: 2px solid #f87171 !important;
+  outline: 2px solid #ffad4d !important;
   outline-offset: -2px;
 }
 .v-menu > .v-overlay__content .v-btn:not(.v-btn--icon),
@@ -984,7 +944,7 @@ hr {
   border-radius: 0;
 }
 .v-menu > .v-overlay__content .v-btn-toggle .v-btn--active {
-  background: rgba(248, 113, 113, 0.18) !important;
+  background: rgba(255, 154, 54, 0.18) !important;
 }
 .v-menu > .v-overlay__content .v-field--variant-underlined {
   border: 1px solid rgba(255, 255, 255, 0.14) !important;
@@ -1013,7 +973,7 @@ hr {
   display: none;
 }
 .v-menu > .v-overlay__content .v-field--variant-underlined.v-field--focused {
-  border-color: rgba(248, 113, 113, 0.65) !important;
+  border-color: rgba(255, 154, 54, 0.65) !important;
 }
 
 /* Keep the compact header search inside the bar and away from Logout. */
@@ -1086,7 +1046,7 @@ hr {
   border-radius: 0;
 }
 .range-nav + .v-btn-toggle .v-btn--active {
-  background: rgba(248, 113, 113, 0.18) !important;
+  background: rgba(255, 154, 54, 0.18) !important;
 }
 .col-borders > .v-card.rounded-sm {
   border-radius: 8px !important;
@@ -1196,10 +1156,10 @@ div[style*="height"]:has(> .v-card.mx-auto > .v-list-item) {
   box-shadow: none !important;
 }
 .v-list-item.ingredient-list-item:hover {
-  background: rgba(248, 113, 113, 0.06) !important;
+  background: rgba(255, 154, 54, 0.06) !important;
 }
 .v-list-item.ingredient-list-item:focus-within {
-  outline: 2px solid #f87171 !important;
+  outline: 2px solid #ffad4d !important;
   outline-offset: -2px;
 }
 .v-container.px-0 > .v-card.d-print-none > .v-card-text .v-list {
@@ -1261,10 +1221,10 @@ section:has(.recipe-step-title) .list-group-item > .v-card:has(> .recipe-step-ti
   display: none;
 }
 section:has(.recipe-step-title) .list-group-item > .v-card:has(> .recipe-step-title):hover {
-  background: rgba(248, 113, 113, 0.06) !important;
+  background: rgba(255, 154, 54, 0.06) !important;
 }
 section:has(.recipe-step-title) .list-group-item > .v-card:has(> .recipe-step-title):focus-visible {
-  outline: 2px solid #f87171 !important;
+  outline: 2px solid #ffad4d !important;
   outline-offset: -2px;
 }
 section:has(.recipe-step-title) .list-group-item > .v-card:has(> .recipe-step-title) .recipe-step-title,
@@ -1308,10 +1268,10 @@ section:has(.recipe-step-title) .list-group-item > .v-card:has(> .recipe-step-ti
   padding: 12px 16px;
 }
 .lg-container .v-expansion-panels > div > .v-expansion-panel.left-border > .v-expansion-panel-title:hover {
-  background: rgba(248, 113, 113, 0.06);
+  background: rgba(255, 154, 54, 0.06);
 }
 .lg-container .v-expansion-panels > div > .v-expansion-panel.left-border > .v-expansion-panel-title:focus-visible {
-  outline: 2px solid #f87171;
+  outline: 2px solid #ffad4d;
   outline-offset: -2px;
 }
 
@@ -1361,10 +1321,10 @@ section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .
   -webkit-backdrop-filter: none !important;
 }
 section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .v-col > .v-card.left-border:hover {
-  background: rgba(248, 113, 113, 0.08) !important;
+  background: rgba(255, 154, 54, 0.08) !important;
 }
 section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .v-col > .v-card.left-border:focus-visible {
-  outline: 2px solid #f87171 !important;
+  outline: 2px solid #ffad4d !important;
   outline-offset: -2px;
 }
 section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .v-col > .v-card.left-border .v-card-actions {
@@ -1398,7 +1358,7 @@ section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .
 }
 .v-sheet:has(> div > .v-row.mb-0.mt-3.mx-7) > div > .text-center .v-progress-circular,
 .v-sheet:has(> div > .v-row.mb-0.mt-3.mx-7) > div > .text-center .v-progress-circular .v-icon {
-  color: #f87171 !important;
+  color: #ffad4d !important;
 }
 #timeline-container .v-timeline-item__opposite .v-chip,
 #timeline-container .v-timeline-item__body > .v-card > .v-card-title .v-chip {
@@ -1426,7 +1386,7 @@ section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .
 }
 #timeline-container .v-timeline-item__opposite .v-chip .v-icon,
 #timeline-container .v-timeline-item__body > .v-card > .v-card-title .v-chip .v-icon {
-  color: #f87171 !important;
+  color: #ffad4d !important;
   font-size: 16px !important;
   margin-inline-end: 6px !important;
 }
@@ -1437,7 +1397,7 @@ section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .
 #timeline-container .v-timeline-divider__inner-dot {
   width: 10px !important;
   height: 10px !important;
-  background: #f87171 !important;
+  background: #ffad4d !important;
   box-shadow: none !important;
 }
 #timeline-container .v-timeline-divider__inner-dot .v-icon {
@@ -1459,7 +1419,7 @@ section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .
   display: none;
 }
 #timeline-container .v-timeline-item__body .v-card.flat:focus-visible {
-  outline: 2px solid #f87171 !important;
+  outline: 2px solid #ffad4d !important;
   outline-offset: -2px;
 }
 @media (max-width: 960px) {
@@ -1522,4 +1482,222 @@ section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .
   flex-wrap: wrap !important;
   overflow: visible !important;
   white-space: normal !important;
+}
+
+/* Settings and data pages: identify page shells by their actual title artwork.
+   BasePageTitle renders the header image inside its first section. */
+:is(
+  .v-container.narrow-container:has(> .mt-4 > section > .v-img img[src="/svgs/manage-group-settings.svg"]),
+  .v-container.narrow-container:has(> .mt-4 > section > .v-img img[src="/svgs/admin-site-settings.svg"]),
+  .v-container:has(> .mt-4 > section > .v-img img[src="/svgs/manage-recipes.svg"])
+) .v-card.pb-2:has(> .v-card-title.pl-0.py-0):has(> .v-divider) {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+:is(
+  .v-container.narrow-container:has(> .mt-4 > section > .v-img img[src="/svgs/manage-group-settings.svg"]),
+  .v-container.narrow-container:has(> .mt-4 > section > .v-img img[src="/svgs/admin-site-settings.svg"]),
+  .v-container:has(> .mt-4 > section > .v-img img[src="/svgs/manage-recipes.svg"])
+) .v-card.pb-2:has(> .v-card-title.pl-0.py-0):has(> .v-divider)::before {
+  display: none;
+}
+
+/* Group and household preference forms keep one quiet outer surface. */
+.v-container.narrow-container:has(> .mt-4 > section > .v-img img[src="/svgs/manage-group-settings.svg"]) form > .v-card {
+  border-color: rgba(255, 255, 255, 0.10) !important;
+  border-radius: 8px !important;
+}
+.v-container.narrow-container:has(> .mt-4 > section > .v-img img[src="/svgs/manage-group-settings.svg"]) .preference-container > div {
+  padding-block: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.v-container.narrow-container:has(> .mt-4 > section > .v-img img[src="/svgs/manage-group-settings.svg"]) .preference-container > div:last-child {
+  border-bottom: 0;
+}
+
+/* Site configuration and application information are lists, not pills. */
+.v-container.narrow-container:has(> .mt-4 > section > .v-img img[src="/svgs/admin-site-settings.svg"]) > section > .v-card.mb-4 {
+  border-radius: 8px !important;
+}
+.v-container.narrow-container:has(> .mt-4 > section > .v-img img[src="/svgs/admin-site-settings.svg"]) > section > .v-card.mb-4 > .v-list-item {
+  margin: 0 !important;
+  border-radius: 0 !important;
+  padding-block: 10px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.v-container.narrow-container:has(> .mt-4 > section > .v-img img[src="/svgs/admin-site-settings.svg"]) > section > .v-card.mb-4 > .v-list-item .v-list-item-subtitle {
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+
+/* Recipe and export tables already have a surrounding card; avoid a second
+   surface without touching table scrolling, pagination, selection or actions. */
+.v-container:has(> .mt-4 > section > .v-img img[src="/svgs/manage-recipes.svg"]) section .v-container > section > .v-card > .v-data-table {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.v-container:has(> .mt-4 > section > .v-img img[src="/svgs/manage-recipes.svg"]) section .v-container > section > .v-card > .v-data-table::before {
+  display: none;
+}
+.v-container:has(> .mt-4 > section > .v-img img[src="/svgs/manage-recipes.svg"]) .v-data-table tbody tr:hover {
+  background: rgba(255, 136, 0, 0.06) !important;
+}
+
+/* AnnouncementDialog: the fixed-width, scrollable nav identifies this dialog
+   without relying on translated text or Vue's generated scope attributes. */
+.v-dialog > .v-overlay__content:has(.v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"]) > .v-card {
+  background: #252525 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 12px !important;
+}
+.v-dialog > .v-overlay__content:has(.v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"]) > .v-card > .v-toolbar {
+  background: #292929 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+.v-dialog .v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"] {
+  background: transparent !important;
+  border: 0 !important;
+  border-inline-end: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 8px 0 !important;
+}
+.v-dialog .v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"] .v-list-item {
+  margin: 0 !important;
+  padding: 10px 12px !important;
+  min-height: 48px;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.v-dialog .v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"] .v-list-item:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+.v-dialog .v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"] .v-list-item--active {
+  background: rgba(255, 136, 0, 0.12) !important;
+  box-shadow: inset 3px 0 #ff8800 !important;
+}
+.v-dialog .v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"] .v-list-item--active .v-list-item-title,
+.v-dialog .v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"] .v-list-item__append .v-icon {
+  color: #ffb55b !important;
+}
+.v-dialog .v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"] .v-list-item-title {
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
+.v-dialog .v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"] .v-list-item-subtitle {
+  margin-top: 4px;
+}
+.v-dialog .v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"] .v-list-item:focus-visible,
+.v-dialog > .v-overlay__content:has(.v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"]) .v-btn:focus-visible {
+  outline: 2px solid #ffb55b !important;
+  outline-offset: -2px !important;
+}
+.v-dialog .v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"] + .flex-grow-1 {
+  min-width: 0;
+}
+.v-dialog .v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"] + .flex-grow-1 > .v-card-title {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+  padding: 20px 24px 8px;
+}
+.v-dialog .v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"] + .flex-grow-1 > .v-card-text {
+  padding: 12px 24px 24px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.v-dialog .v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"] + .flex-grow-1 > .v-card-title .v-chip {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding-inline: 0 !important;
+  color: #ffb55b !important;
+}
+.v-dialog .v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"] + .flex-grow-1 > .v-card-title .v-chip :is(.v-chip__underlay, .v-chip__overlay) {
+  display: none;
+}
+.v-dialog .v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"] + .flex-grow-1 > .v-card-title .v-chip :is(.v-chip__content, .v-icon) {
+  color: #ffb55b !important;
+}
+.v-dialog > .v-overlay__content:has(.v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"]) .v-btn:not(.v-btn--icon) {
+  border-radius: 6px !important;
+}
+@media (max-width: 600px) {
+  .v-dialog .d-flex:has(> .v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"]) {
+    flex-direction: column;
+  }
+  .v-dialog .v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"] {
+    width: 100% !important;
+    max-height: 35vh !important;
+    border-inline-end: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
+  }
+  .v-dialog .v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"] + .flex-grow-1 > .v-card-title {
+    padding: 16px 16px 8px;
+  }
+  .v-dialog .v-list.overflow-y-auto.border-e.flex-shrink-0[style*="200px"] + .flex-grow-1 > .v-card-text {
+    padding: 8px 16px 20px;
+  }
+}
+
+/* Shopping list groups need one level of structure, not nested glass panels. */
+.shopping-list-view > .v-expansion-panels,
+.shopping-list-view > .v-expansion-panels > .v-expansion-panel {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.shopping-list-view > .v-expansion-panels {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
+}
+.shopping-list-view > .v-expansion-panels > .v-expansion-panel > .v-expansion-panel__shadow {
+  display: none;
+}
+.shopping-list-view .v-expansion-panel-title:focus-visible {
+  outline: 2px solid #ffb55b !important;
+  outline-offset: -2px;
+}
+
+/* Long list names and profile descriptions remain readable on small screens. */
+@media (max-width: 700px) {
+  .v-container.narrow-container > section > .v-card.left-border[href^="/shopping-lists/"] > .v-card-title {
+    display: flex !important;
+    overflow: visible !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+  }
+  .v-container.narrow-container > section > .v-card.left-border[href^="/shopping-lists/"] > .v-card-title > .text-truncate {
+    min-width: 0;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+  }
+  .v-container.narrow-container > section > .v-card.left-border[href^="/shopping-lists/"] > .v-card-title > .v-btn {
+    flex-shrink: 0;
+  }
+  .v-card--link.v-card--variant-outlined.d-flex.flex-column.mt-4.pa-2:has(> .v-card-actions) .v-card-text.d-flex.flex-row.mb-auto {
+    display: flex !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+  }
 }

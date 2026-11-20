@@ -1,19 +1,22 @@
 # Mealie Liquid Glass Theme
 
 A dark **Liquid Glass** custom theme for [Mealie](https://github.com/mealie-recipes/mealie):
-anthracite/black surfaces, red accents, translucent glass cards, softened borders,
+neutral charcoal surfaces, orange accents, translucent glass cards, softened borders,
 and cache-busted CSS injection.
 
 This fork of [thorethy1/mealie-liquid-glass-theme](https://github.com/thorethy1/mealie-liquid-glass-theme)
 includes refinements for navigation, search, menus, switches, checkboxes, cookbooks,
 organizers, the meal planner, timeline, and recipe pages. It is the source of
 the theme used by the server configuration; the upstream installation instructions below still apply.
+Visual direction is inspired by [VLC Redesign](https://github.com/KuchiSofts/vlc-redesign).
 
 Recipe cards use centered image crops; open a recipe and click its photo to
 view the complete image in Mealie's lightbox.
 Recipe categories, tags, and nutrition use flat sections on desktop and mobile.
 
-## Pics
+## Original theme screenshots
+
+These upstream screenshots predate this fork's orange palette and layout refinements.
 
 <img width="1320" height="2250" alt="IMG_1196" src="https://github.com/user-attachments/assets/aa382696-3e49-4473-bc98-b2b6ce14dd1f" />
 <img width="1320" height="2253" alt="IMG_1198" src="https://github.com/user-attachments/assets/5020f6f8-9625-4907-8a73-27eb3f74b0dc" />
@@ -103,15 +106,15 @@ The CSS does most of the visual work. Set these env vars on the Mealie service
 to keep Vuetify's runtime colors consistent with the theme:
 
 ```env
-THEME_LIGHT_PRIMARY=DC2626
-THEME_LIGHT_ACCENT=EF4444
+THEME_LIGHT_PRIMARY=E87500
+THEME_LIGHT_ACCENT=FFAD4D
 THEME_LIGHT_SECONDARY=1F2937
 THEME_LIGHT_SUCCESS=22C55E
 THEME_LIGHT_INFO=94A3B8
 THEME_LIGHT_WARNING=F59E0B
 THEME_LIGHT_ERROR=F43F5E
-THEME_DARK_PRIMARY=DC2626
-THEME_DARK_ACCENT=F87171
+THEME_DARK_PRIMARY=E87500
+THEME_DARK_ACCENT=FFAD4D
 THEME_DARK_SECONDARY=030712
 THEME_DARK_SUCCESS=22C55E
 THEME_DARK_INFO=94A3B8

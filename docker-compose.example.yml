@@ -6,11 +6,11 @@ services:
     environment:
       - TZ=Europe/Berlin
       # Optional: align Vuetify's runtime colors with the theme
-      - THEME_LIGHT_PRIMARY=DC2626
-      - THEME_LIGHT_ACCENT=EF4444
+      - THEME_LIGHT_PRIMARY=E87500
+      - THEME_LIGHT_ACCENT=FFAD4D
       - THEME_LIGHT_SECONDARY=1F2937
-      - THEME_DARK_PRIMARY=DC2626
-      - THEME_DARK_ACCENT=F87171
+      - THEME_DARK_PRIMARY=E87500
+      - THEME_DARK_ACCENT=FFAD4D
       - THEME_DARK_SECONDARY=030712
     entrypoint: ["/theme/entrypoint-liquid-glass.sh"]
     volumes:
