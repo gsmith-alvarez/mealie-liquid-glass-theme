@@ -2005,11 +2005,8 @@ section:has(> .v-card.pb-2 + .v-row > .v-col > .v-card.left-border) > .v-row > .
     }
   }
 }
-/* Keep entering and exiting cook mode visually paired. */
-:is(
-  .v-container.px-0 > .v-card.d-print-none > .v-card-text .v-form > section > .d-flex > .v-btn.v-btn--variant-text.text-primary:not(.v-btn--icon),
-  .v-main .v-sheet + .v-sheet + .v-btn.v-btn--icon[style*="position: fixed"]
-) {
+/* Exit cook mode keeps the red tint; entering it uses the standard amber glass. */
+.v-main .v-sheet + .v-sheet + .v-btn.v-btn--icon[style*="position: fixed"] {
   --primary-action-bg: var(--cook-action-bg);
   --primary-action-border: var(--cook-action-border);
 }
