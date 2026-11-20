@@ -5,9 +5,10 @@ neutral charcoal surfaces, orange accents, translucent glass cards, softened bor
 and cache-busted CSS injection.
 
 This fork of [thorethy1/mealie-liquid-glass-theme](https://github.com/thorethy1/mealie-liquid-glass-theme)
-includes refinements for navigation, search, menus, switches, checkboxes, cookbooks,
-organizers, the meal planner, timeline, and recipe pages. It is the source of
-the theme used by the server configuration; the upstream installation instructions below still apply.
+includes refinements for navigation, search, menus, switches, checkboxes, admin
+pages, cookbooks, organizers, the meal planner, timeline, and recipe pages. It
+is the source of the theme used by the server configuration; the upstream
+installation instructions below still apply.
 Visual direction is inspired by [VLC Redesign](https://github.com/KuchiSofts/vlc-redesign).
 
 Recipe cards use centered image crops; open a recipe and click its photo to
