@@ -21,6 +21,8 @@ view the complete image in Mealie's lightbox.
 Recipe categories, tags, and nutrition use flat sections on desktop and mobile.
 Switches use a simple outlined track; checkboxes use an orange flip-disc
 treatment inspired by Uiverse.io's chase2k25.
+Primary actions use a restrained orange glass highlight; navigation, filters,
+icon buttons, and destructive actions keep their distinct treatments.
 
 ## Screenshots
 
